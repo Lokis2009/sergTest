@@ -1,0 +1,23 @@
+
+<div class="filter">
+	<h3>Filter by:</h3>
+	<div>
+		<span>Title</span>
+		<input type="text" [(ngModel)]="filterString" />
+		<span>Date</span>
+		<input type="text">
+	</div>
+
+</div>
+
+<div class="todo-list_wrapper" >
+	<div class="todo-item" *ngFor="let todo of (todoList | filter: filterString)" >
+		<button type="button" class="btn btn-default" (click)=delete(todo)>
+  					<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+		</button>
+		
+		<h3>{{todo.title}}</h3>
+		<div>{{todo.description}}</div>
+		<span>{{todo.created_at}}</span>
+	</div>
+</div>
