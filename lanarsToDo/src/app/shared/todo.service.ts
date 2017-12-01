@@ -13,7 +13,8 @@ export class TodoService {
 	createTodo(title: string, description: string){
 		let id = this.todoList.length+1;
 		let now = new Date()
-		let created_at = now.getFullYear()+'-'+now.getMonth()+'-'+now.getDay();
+		let created_at = new Date().toDateString()
+		console.log(created_at)
 		let todo = new Todo(id, title, description, created_at)
 		
 		this.todoList.push(todo)

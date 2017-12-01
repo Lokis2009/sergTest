@@ -12,16 +12,18 @@
 }
 
 .todo-list_wrapper{
-	float: left;
-	background-color: cadetblue;
-	width: 75%;
-	height: 100%
+	background-color: #e2d3d3;
+	min-height: 500px
+	
 }
 .todo-item {
-    padding: 2%;
-    margin: 2%;
-    background-color: aqua;
-    float: left;
-    width: 25%;
-    height: 26%;
+   border: 1px solid #c5b0b0;
+	border-radius: 13px;
+	min-height: 220px;
+	overflow: auto
+}
+
+.delBtn{
+	float: right;
+    margin: 4%
 }

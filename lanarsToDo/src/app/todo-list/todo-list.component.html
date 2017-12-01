@@ -1,23 +1,26 @@
-
-<div class="filter">
-	<h3>Filter by:</h3>
-	<div>
-		<span>Title</span>
-		<input type="text" [(ngModel)]="filterString" />
-		<span>Date</span>
-		<input type="text">
+<section class="container">
+	<form class="col-xs-12 col-md-2">
+		<h4>Filter by:</h4>
+		<div class="form-group">
+			<label for="titleFilter"> Title</label>
+			<input type="text" class="form-control" id="titleFilter" name="titleFilter" placeholder="Title" [(ngModel)]="filterString">
+		</div>
+		<div class="form-group">
+			<label for="dateFilter">Date</label>
+			<select class="form-control" id="dateFilter" type="text" name="dateFilter" [(ngModel)]="filterDate">
+    		<option value=""></option>
+			<option *ngFor="let item of todoList" value="{{item.created_at}}">{{item.created_at}}</option>
+		</select>
+		</div>
+	</form>
+	<div class="col-xs-12 col-md-10 todo-list_wrapper">
+		<div class="row">
+			<div class="col-xs-6 col-md-4 col-lg-3 todo-item" *ngFor="let todo of todoList | filter : 'title' : filterString | filter : 'created_at' : filterDate">
+				<a (click)=delete(todo) class="delBtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+				<h3>{{todo.title}}</h3>
+				<div>{{todo.description}}</div>
+				<span>{{todo.created_at | date}}</span>
+			</div>
+		</div>
 	</div>
-
-</div>
-
-<div class="todo-list_wrapper" >
-	<div class="todo-item" *ngFor="let todo of (todoList | filter: filterString)" >
-		<button type="button" class="btn btn-default" (click)=delete(todo)>
-  					<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-		</button>
-		
-		<h3>{{todo.title}}</h3>
-		<div>{{todo.description}}</div>
-		<span>{{todo.created_at}}</span>
-	</div>
-</div>
+</section>

@@ -1,4 +1,15 @@
-<form (ngSubmit)="onCreate()" name="todoForm">
-	<label>Title<input type="text" name="title" placeholder="Title" [(ngModel)]="title" required></label> <label>Description<input type="text" name="description" [(ngModel)]="description" placeholder="Description"></label>
-	<button type ="submit">Submit</button>
-</form>
+<section>
+	<div class="row">
+		<div class="col-xs12 col-md-4 col-md-offset-4">
+			<form (ngSubmit)="onCreate()" name="todoForm">
+				<div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" class="form-control" id="title" name="title" placeholder="Title" [(ngModel)]="title" required>
+					<label for="description">Description</label>
+					<input type="text" class="form-control" id="description" name="description" placeholder="description" [(ngModel)]="description">
+				</div>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</div>
+</section>
