@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { TodoFormComponent } from './todo-form/todo-form.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import {TodoService} from './shared/todo.service';
-import {FilterPipe} from './shared/pipe.pipe'
+import {FilterPipe, PagerPipe} from './shared/pipe.pipe'
 
 
 @NgModule({
@@ -14,7 +14,8 @@ import {FilterPipe} from './shared/pipe.pipe'
     AppComponent,
     TodoFormComponent,
     TodoListComponent,
-	FilterPipe  
+	FilterPipe,
+	PagerPipe  
   ],
   imports: [
     BrowserModule,

@@ -13,7 +13,7 @@
 
 .todo-list_wrapper{
 	background-color: #e2d3d3;
-	min-height: 500px
+	min-height: 440px
 	
 }
 .todo-item {
@@ -25,5 +25,6 @@
 
 .delBtn{
 	float: right;
-    margin: 4%
+    margin: 4%;
+	cursor: pointer
 }
