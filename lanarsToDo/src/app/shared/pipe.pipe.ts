@@ -1,6 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'filter' })
+@Pipe({ name: 'filter',
+	  pure: false})
 
 export class FilterPipe implements PipeTransform {
 
@@ -13,25 +14,24 @@ export class FilterPipe implements PipeTransform {
 }
 
 @Pipe({
-	name: 'pager'
+	name: 'pager',
+	pure: false
 })
 
 export class PagerPipe implements PipeTransform{
 	
-	transform (values: any[], page:number, perPage:number):any[]{
-		let pagesAll: number = Math.ceil(values.length/perPage)
-		if (pagesAll <= 1){
-			return values
-		} else{	
-		let transformArr: any[]=[]
-		values.forEach((item, index)=>{
+	transform (values: any[], page:number, perPage:number) {
+	let transformArr:any[] = []
+	values.forEach((item, index)=>{
 			if (index >= perPage*(page-1) && index < perPage*(page-1)+perPage ) {
 				transformArr.push(item)
 			}
 		})
 		return transformArr
+			
 		}
+
 	}
-}
+
  
 

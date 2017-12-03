@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import{ Todo } from '../shared/todo';
 import { todoList } from '../shared/data';
 import { TodoService } from '../shared/todo.service';
+import { ChangeDetectorRef} from '@angular/core';
 
   
 @Component({
@@ -16,17 +17,17 @@ export class TodoListComponent implements OnInit {
 	todoList: Todo[];
 	page:number;
 	numberOfPages:number[];
-  	itemInPage:number = 6;
+  	itemInPage:number = 8;
 	
-	constructor(private todoService: TodoService) { 
+	constructor(private todoService: TodoService, private ref: ChangeDetectorRef ) { 
 	  this.todoList = [];
-		this.numberOfPages=[]  
   }
 	
   ngOnInit() {
 	  this.todoList = this.todoService.getTodos();
 	  this.getPages()
 	  this.page=1
+	  this.ref.detectChanges()
   }
 	
 	getPages() {
