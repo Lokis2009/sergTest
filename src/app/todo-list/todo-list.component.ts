@@ -20,7 +20,7 @@ export class TodoListComponent implements OnInit {
 	filterString:string ='';
 	filterDate: string='';
 	numberOfPages:number[];
-  	itemInPage:number = 3;
+  	itemInPage:number = 8;
 	
 	constructor(private todoService: TodoService, private ref: ChangeDetectorRef ) { 
 	  this.todoList = [];
