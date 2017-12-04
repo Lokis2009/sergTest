@@ -20,6 +20,7 @@
    border: 1px solid #c5b0b0;
 	border-radius: 13px;
 	min-height: 220px;
+	background: linear-gradient(-215deg, #f2f5f9 0%, #e1e5ea 100%);
 	overflow: auto
 }
 

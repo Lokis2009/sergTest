@@ -13,11 +13,30 @@
 		</select>
 		</div>
 	</form>
+
+	<div class="col-xs-12 col-md-offset-3 col-md-6" style="margin-bottom: 20px">
+			<div class="btn-group">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   						 Item on page: {{itemInPage}} <span class="caret"></span>
+   							 <span class="sr-only">Toggle Dropdown</span>
+ 				 </button>
+				<ul class="dropdown-menu">
+					<li (click)="itemInPage=3; getPages()"><a>3</a></li>
+					<li (click)="itemInPage=4; getPages()"><a>4</a></li>
+					<li (click)="itemInPage=6; getPages()"><a>6</a></li>
+					<li (click)="itemInPage=8; getPages()"><a>8</a></li>
+					<li (click)="itemInPage=12; getPages()"><a>12</a></li>
+					
+
+				</ul>
+			</div>
+		</div>
+	
 	<div class="col-xs-12 col-md-10 todo-list_wrapper">
 		<div class="row">
 			<div class="col-xs-6 col-md-4 col-lg-3 todo-item" *ngFor="let todo of todoList | filter : 'title' : filterString | filter : 'created_at' : filterDate | pager: page : itemInPage">
 
-				<a (click)=delete(todo) class="delBtn"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+				<a (click)="delete(todo); getPages()" class="delBtn"><span  class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
 				<h3>{{todo.title}}</h3>
 				<div>{{todo.description}}</div>
 				<span>{{todo.created_at | date}}</span>
