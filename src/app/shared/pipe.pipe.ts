@@ -5,8 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class FilterPipe implements PipeTransform {
 
-	transform (values: any[], field: string, value: string) :any[] {
-			
+	transform (values: any[], field: string, value: string) :any[] {		
 		if (!values || !values.length) return [];
 		if (!value) return values;
 		return values.filter(it => it[field].indexOf(value) >=0 )
