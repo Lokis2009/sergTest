@@ -1,27 +1,23 @@
 # LanarsToDo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.5.
+Тестовое задание по Angular
 
-## Development server
+Суть тестового задания
+Создать простое приложение на базе Angular 2. Приложение представляет собой Todo list, с фильтрацией, по функционалу можно создать Todo-item, редактировать его и удалить, применить фильтр по title и date. В качестве клиента выступает Angular 2.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Структура объекта Todo-item:
+{
+	id: 1,
+	title: “Some title”,
+	description: “Some description”,
+	created_at: “2017-24-12”
+}
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+Структура фронтенда:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Тут на твое усмотрение. Т.к. бэкенд не используем, должен быть файл с моками Todo-items (массив из Todo-item). Будет сущность Todo-item, у каждой сущности можно редактировать поля title и description. Фильтровать их по дате создания и по title. Удалить сущность можно при помощи какого-нибудь крестика на плашке самого item. Добавление Todo-item осуществляется посредством ввода в два поля Title & Description и нажатия на кнопку Submit. Так же есть pagination для отображения большого кол-ва Todo-items. Пагинация должна быть полностью кастомной. Верстку желательно делать на flexbox, если же верстка не очень можно использовать один из framework’ов bootstrap или foundation. Мобильная верстка тоже должна присутствовать.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
